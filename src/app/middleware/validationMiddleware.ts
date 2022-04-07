@@ -6,7 +6,6 @@ import HttpException from "../exception/HttpException";
 import APP_CONSTANTS from "../constants";
 import { ErrorCodes } from "../util/errorCode";
 
-
 /**
  * Middleware to validate the request.
  * Validations are performed using class validator

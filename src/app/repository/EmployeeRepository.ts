@@ -49,6 +49,14 @@ export class EmployeeRepository extends Repository<Employee> {
         });
     }
 
+    public async getEmployeeByUsername(username: string) {
+        const employeeRepo = getConnection().getRepository(Employee);
+        const employeeDetail = await employeeRepo.findOne({
+            where: { username },
+        });
+        return employeeDetail;
+    }
+
     public async hardRemoveEmployee(employee: Employee) {
         const employeeRepo = getConnection().getRepository(Employee);
         return employeeRepo.remove(employee);
